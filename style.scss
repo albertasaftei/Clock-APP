@@ -56,18 +56,21 @@ body {
 
             .time-container {
                 display: flex;
-                align-items: flex-end;
+                align-items: center;
                 padding: 2rem 0;
 
                 #time {
                     font-size: 18rem;
                     font-weight: 600;
                     line-height: 1;
+                    letter-spacing: 1rem;
                 }
 
                 #timezone {
                     font-size: 3rem;
                     letter-spacing: 5px;
+                    font-weight: 500;
+                    margin-left: 2rem;
                 }
 
             }

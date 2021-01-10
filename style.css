@@ -64,9 +64,9 @@ body .container .clock-container .time-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2rem 0;
 }
 
@@ -74,11 +74,14 @@ body .container .clock-container .time-container #time {
   font-size: 18rem;
   font-weight: 600;
   line-height: 1;
+  letter-spacing: 1rem;
 }
 
 body .container .clock-container .time-container #timezone {
   font-size: 3rem;
   letter-spacing: 5px;
+  font-weight: 500;
+  margin-left: 2rem;
 }
 
 body .container .clock-container #position {
