@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image: url(img/day.jpg);
+    background-size: cover;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.418);
+        z-index: -1;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        padding: 6rem 12rem;
+        color: rgb(228, 228, 228);
+
+        .quote-container {
+
+
+            #quote {
+                font-size: 1.25rem;
+                width: 50%;
+                font-weight: 300;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+
+            #author {
+                font-size: 1.25rem;
+                font-weight: 500;
+            }
+            
+        }
+
+        .clock-container {
+            text-transform: uppercase;
+
+            #greetings {
+                font-size: 1.75rem;
+                letter-spacing: 5px;
+            }
+
+            .time-container {
+                display: flex;
+                align-items: flex-end;
+                padding: 2rem 0;
+
+                #time {
+                    font-size: 18rem;
+                    font-weight: 600;
+                    line-height: 1;
+                }
+
+                #timezone {
+                    font-size: 3rem;
+                    letter-spacing: 5px;
+                }
+
+            }
+
+            #position {
+                font-size: 1.75rem;
+                letter-spacing: 5px;
+                font-weight: 600;
+            }
+
+        }
+    }
+}
