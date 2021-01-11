@@ -1,9 +1,29 @@
 const timezoneAPI = "https://timezoneapi.io/api/ip/?token=aNsiQLfUDzdnhRxsLmJP";
-const quotesAPI = "https://api.paperquotes.com/apiv1/quotes/?tags=love,motivation&order=-likes"
+let quote = document.getElementById("quote")
+const author = document.getElementById("author")
 const time = document.getElementById("time");
 const timezone = document.getElementById("timezone");
 const position = document.getElementById("position");
 const greetings = document.getElementById("greetings");
+const reloadBtn = document.getElementById("reload-btn")
+let quotes = [];
+
+fetch("quotes.json").then(response => {
+    return response.json()
+}).then(data => {
+    quotes = data
+    let randomNumber = Math.floor((Math.random() * data.quotes.length))
+    let randomQuote = `"${data.quotes[randomNumber].quote} "`
+    quote.innerText = randomQuote
+    author.innerText = data.quotes[randomNumber].author
+});
+
+reloadBtn.addEventListener('click', () => {
+    let randomNumber = Math.floor((Math.random() * quotes.quotes.length))
+    let randomQuote = quotes.quotes[randomNumber].quote
+    quote.innerText = randomQuote
+    author.innerText = quotes.quotes[randomNumber].author
+})
 
 fetch(timezoneAPI).then((response) => {
     return response.json();
@@ -12,14 +32,6 @@ fetch(timezoneAPI).then((response) => {
     timezone.innerText = `${data.data.datetime.offset_tzab}`
 }).catch((e) => {
     console.error(e);
-});
-
-fetch(quotesAPI).then(response => {
-    return response.json
-}).then(data => {
-    console.log(data)
-}).catch(e => {
-    console.error(e)
 });
 
 (function showDate() {

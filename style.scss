@@ -5,6 +5,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+:focus {
+    outline: none;
+}
+
 body {
     height: 100vh;
     background-image: url(img/day.jpg);
@@ -29,20 +33,42 @@ body {
         color: rgb(228, 228, 228);
 
         .quote-container {
-
+            position: relative;
+            width: max-content;
 
             #quote {
                 font-size: 1.25rem;
-                width: 50%;
-                font-weight: 300;
+                width: 90%;
+                font-style: italic;
+                font-weight: 400;
                 margin-bottom: 1rem;
                 line-height: 1.5;
+                color: rgba(228, 228, 228, 0.904);
+            }
+
+            #reload-btn {
+                font-size: 1.5rem;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                color: rgba(255, 255, 255, 0.514);
+                position: absolute;
+                right: 5%;
+                top: 0;
+                margin-left: 5%;
+                transition: all .5s ease;
+
+                &:hover {
+                    color: white;
+                    transform: rotate(90deg);
+                }
             }
 
             #author {
                 font-size: 1.25rem;
                 font-weight: 500;
             }
+
             
         }
 

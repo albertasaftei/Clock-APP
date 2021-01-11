@@ -6,6 +6,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+:focus {
+  outline: none;
+}
+
 body {
   height: 100vh;
   background-image: url(img/day.jpg);
@@ -38,12 +42,41 @@ body .container {
   color: #e4e4e4;
 }
 
+body .container .quote-container {
+  position: relative;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
 body .container .quote-container #quote {
   font-size: 1.25rem;
-  width: 50%;
-  font-weight: 300;
+  width: 90%;
+  font-style: italic;
+  font-weight: 400;
   margin-bottom: 1rem;
   line-height: 1.5;
+  color: rgba(228, 228, 228, 0.904);
+}
+
+body .container .quote-container #reload-btn {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.514);
+  position: absolute;
+  right: 5%;
+  top: 0;
+  margin-left: 5%;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+body .container .quote-container #reload-btn:hover {
+  color: white;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 body .container .quote-container #author {
