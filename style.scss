@@ -11,9 +11,9 @@
 
 body {
     height: 100vh;
-    background-image: url(img/day.jpg);
     background-size: cover;
     position: relative;
+    background-repeat: no-repeat;
 
     &:before {
         content: "";

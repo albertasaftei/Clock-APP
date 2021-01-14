@@ -13,14 +13,14 @@ fetch("quotes.json").then(response => {
 }).then(data => {
     quotes = data
     let randomNumber = Math.floor((Math.random() * data.quotes.length))
-    let randomQuote = `"${data.quotes[randomNumber].quote} "`
+    let randomQuote = `"${data.quotes[randomNumber].quote}"`
     quote.innerText = randomQuote
     author.innerText = data.quotes[randomNumber].author
 });
 
 reloadBtn.addEventListener('click', () => {
     let randomNumber = Math.floor((Math.random() * quotes.quotes.length))
-    let randomQuote = quotes.quotes[randomNumber].quote
+    let randomQuote = `"${quotes.quotes[randomNumber].quote}"`
     quote.innerText = randomQuote
     author.innerText = quotes.quotes[randomNumber].author
 })
@@ -36,13 +36,15 @@ fetch(timezoneAPI).then((response) => {
 
 (function showDate() {
     const date = new Date();
-    if (date.getHours() > 12 && date.getHours() < 18) {
+    if (date.getHours() >= 6  && date.getHours() < 12) {
+        greetings.innerText = "Good morning, it's currently"
+        document.body.style.backgroundImage = "url(img/day.jpg)"
+    } else if (date.getHours() >= 12 && date.getHours() < 18) {
         greetings.innerText = "Good afternoon, it's currently"
-    } else if (date.getHours() >= 18) {
+        document.body.style.backgroundImage = "url(img/afternoon.jpg)"
+    } else if (date.getHours() >= 18 && date.getHours() < 0) {
         greetings.innerText = "Good evening, it's currently"
         document.body.style.backgroundImage = "url(img/night.jpg)"
-    } else {
-        greetings.innerText = "Good morning, it's currently"
     }
 
     let hours = date.getHours()
