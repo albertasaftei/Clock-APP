@@ -35,7 +35,9 @@ body {
         .quote-container {
             position: relative;
             width: max-content;
-
+            display: flex;
+            align-items: flex-start;
+            
             #quote {
                 font-size: 1.25rem;
                 width: 90%;
@@ -52,10 +54,7 @@ body {
                 border: none;
                 cursor: pointer;
                 color: rgba(255, 255, 255, 0.514);
-                position: absolute;
-                right: 5%;
-                top: 0;
-                margin-left: 5%;
+                margin-right: 1rem;
                 transition: all .5s ease;
 
                 &:hover {

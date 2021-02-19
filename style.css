@@ -47,6 +47,12 @@ body .container .quote-container {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 body .container .quote-container #quote {
@@ -65,10 +71,7 @@ body .container .quote-container #reload-btn {
   border: none;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.514);
-  position: absolute;
-  right: 5%;
-  top: 0;
-  margin-left: 5%;
+  margin-right: 1rem;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
